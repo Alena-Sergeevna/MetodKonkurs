@@ -35,6 +35,26 @@ const releaseUrl = 'https://github.com/Alena-Sergeevna/MetodKonkurs/releases'
     </p>
   </section>
 
+  <section class="card" style="margin-bottom: 1rem">
+    <h2>Как запустить (студент)</h2>
+    <ol class="muted" style="padding-left: 1.2rem; line-height: 1.7">
+      <li>Скачайте ZIP и распакуйте в папку без кириллицы в слишком длинном пути, если возможно.</li>
+      <li>
+        <strong>Windows:</strong> откройте <code>Курс.exe</code>. Рядом обязательно должна быть
+        папка <code>_internal</code> — не переносите exe отдельно.
+      </li>
+      <li>
+        <strong>Astra Linux / РЕД ОС / Альт:</strong> один раз выполните
+        <code>sudo bash Запуск/install_linux.sh</code>, затем запускайте файл <code>Курс</code>.
+      </li>
+      <li>В окне курса укажите ФИО и группу.</li>
+      <li>
+        В разделе «Настройка среды» подготовьте SQLite и запустите Laravel, затем проходите
+        занятия. После практики нажмите «Отправить результат».
+      </li>
+    </ol>
+  </section>
+
   <section class="card">
     <h2>Лекции</h2>
     <ul>

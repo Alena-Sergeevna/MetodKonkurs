@@ -29,26 +29,23 @@ const zipUrl = import.meta.env.VITE_COURSE_ZIP_URL || ''
     </div>
   </section>
 
-  <section class="grid-3" style="margin-bottom: 1.25rem">
+  <section class="grid-2" style="margin-bottom: 1.25rem">
     <article class="card">
       <h3>Для студента</h3>
       <p class="muted">
-        Распаковать архив, указать имя, пройти занятия. После каждой практики —
-        кнопка «Отправить результат» преподавателю.
+        1. Скачайте ZIP и распакуйте в обычную папку (не с рабочего стола длинного пути).<br />
+        2. Windows: запустите <code>Курс.exe</code> — рядом должна лежать папка <code>_internal</code>.<br />
+        3. Astra Linux / РЕД ОС / Альт: один раз <code>sudo bash Запуск/install_linux.sh</code>,
+        затем файл <code>Курс</code>.<br />
+        4. Укажите ФИО и группу → пройдите занятия → после практики нажмите
+        «Отправить результат».
       </p>
     </article>
     <article class="card">
       <h3>Для преподавателя</h3>
       <p class="muted">
-        Войти через Firebase, найти группу или ФИО, увидеть прогресс по шагам,
-        тестам и итоговой сдаче.
-      </p>
-    </article>
-    <article class="card">
-      <h3>Для экспертизы</h3>
-      <p class="muted">
-        Ссылка на этот сайт + ZIP курса. Роль студент, обратная связь встроена
-        в учебный модуль.
+        Войдите по email и паролю в кабинет, найдите группу или ФИО, посмотрите
+        прогресс по шагам, тестам и итоговой сдаче.
       </p>
     </article>
   </section>

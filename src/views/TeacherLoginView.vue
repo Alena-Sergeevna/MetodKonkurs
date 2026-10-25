@@ -6,7 +6,7 @@ import { auth, firebaseConfigured } from '../firebase'
 
 const route = useRoute()
 const router = useRouter()
-const email = ref('')
+const email = ref('teacher@rest.ru')
 const password = ref('')
 const error = ref('')
 const loading = ref(false)
@@ -32,10 +32,15 @@ async function submit() {
 
 <template>
   <section class="card" style="max-width: 460px; margin: 0 auto">
-    <h1>Вход преподавателя</h1>
+    <h1>Вход по email и паролю</h1>
     <p class="muted">
-      Учётную запись создайте в Firebase Console → Authentication (Email/Password).
-      Студенты на сайт не входят — они отправляют результат из учебного модуля.
+      Кабинет преподавателя. Студенты на сайт не входят — они отправляют результат
+      из учебного модуля.
+    </p>
+    <p class="muted" style="margin-top: 0.75rem">
+      Демо-доступ:<br />
+      email — <code>teacher@rest.ru</code><br />
+      пароль — <code>rest2026</code>
     </p>
     <form style="margin-top: 1rem" @submit.prevent="submit">
       <label class="field">
@@ -48,7 +53,7 @@ async function submit() {
       </label>
       <p v-if="error" style="color: #fca5a5">{{ error }}</p>
       <button class="btn btn-primary" type="submit" :disabled="loading">
-        {{ loading ? 'Вход…' : 'Войти' }}
+        {{ loading ? 'Вход…' : 'Войти по email и паролю' }}
       </button>
     </form>
   </section>
