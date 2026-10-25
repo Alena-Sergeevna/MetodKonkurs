@@ -8,7 +8,7 @@
     "build": "vite build",
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist -r https://github.com/Alena-Sergeevna/MetodKonkurs.git"
+    "deploy": "npm run build && node scripts/prepare-pages.mjs && gh-pages -d dist -r https://github.com/Alena-Sergeevna/MetodKonkurs.git --nojekyll --dotfiles -f"
   },
   "dependencies": {
     "firebase": "^10.14.1",
