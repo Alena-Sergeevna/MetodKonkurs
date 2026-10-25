@@ -40,12 +40,23 @@ const filtered = computed(() => {
 
 function asDate(value: unknown): string {
   if (!value) return '—'
-  if (typeof value === 'string') return value
-  if (typeof value === 'object' && value !== null && 'seconds' in value) {
-    const sec = Number((value as { seconds: number }).seconds)
-    return new Date(sec * 1000).toLocaleString('ru-RU')
+  let date: Date | null = null
+  if (typeof value === 'string') {
+    const parsed = new Date(value)
+    date = Number.isNaN(parsed.getTime()) ? null : parsed
+  } else if (typeof value === 'object' && value !== null && 'seconds' in value) {
+    date = new Date(Number((value as { seconds: number }).seconds) * 1000)
+  } else if (value instanceof Date) {
+    date = value
   }
-  return String(value)
+  if (!date || Number.isNaN(date.getTime())) return String(value)
+  return date.toLocaleString('ru-RU', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  })
 }
 
 async function load() {
